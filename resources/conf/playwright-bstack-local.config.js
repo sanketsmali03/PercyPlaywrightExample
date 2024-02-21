@@ -3,7 +3,8 @@ const { devices } = require('@playwright/test');
 const config = {
   use: {
     trace: 'on-first-retry',
-    baseURL: 'http://localhost:3000'
+    baseURL: 'http://localhost:3000',
+    timeout: 60000
   },
   testDir: '../../src/test',
   projects: [
