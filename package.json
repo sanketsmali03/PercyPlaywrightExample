@@ -20,6 +20,7 @@
     "onPrem-parallel": "npx playwright test --headed --config=resources/conf/playwright.config.js --workers 2",
     "postinstall": "npm update browserstack-node-sdk",
     "bstack-single": "percy exec -- npx browserstack-node-sdk playwright test e2e.spec.js --config=resources/conf/playwright.config.js --browserstack.config=./resources/browserstack-conf/browserstack-single.yml",
+    "bstack-single-local": "percy exec -- npx browserstack-node-sdk playwright test e2e.spec.js --config=resources/conf/playwright-bstack-local.config.js --browserstack.config=./resources/browserstack-conf/browserstack-single.yml",
     "bstack-parallel-tests": "npx browserstack-node-sdk playwright test --config=resources/conf/playwright.config.js --browserstack.config=./resources/browserstack-conf/browserstack-parallel.yml",
     "bstack-parallel-browsers": "npx browserstack-node-sdk playwright test e2e.spec.js --config=resources/conf/playwright.config.js --browserstack.config=./resources/browserstack-conf/browserstack-parallel-browsers.yml",
     "bstack-local": "npx browserstack-node-sdk playwright test login.spec.js --config=resources/conf/playwright-bstack-local.config.js --browserstack.config=./resources/browserstack-conf/browserstack-local.yml",

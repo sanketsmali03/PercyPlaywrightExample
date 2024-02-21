@@ -1,0 +1,9 @@
+version: 2
+discovery:
+  launch-options:
+    headless: true
+# snapshot:
+  # percy-css: | 
+  #   .Navbar_root__2kbI9 { 
+  #     background-color: #9778c2; 
+  #   }
