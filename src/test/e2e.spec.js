@@ -6,7 +6,7 @@ test.describe("End to End Tests", ()=>{
   test.setTimeout(80000); 
   test('End to End test', async ({ page }) => {
     await page.goto("http://localhost:3000/");
-
+    await new Promise(resolve => setTimeout(resolve, 3000));
     await percySnapshot(page, 'homePage');
 
     await page.click("#signin", { delay: 100 });
@@ -14,9 +14,10 @@ test.describe("End to End Tests", ()=>{
     await page.fill("#react-select-2-input", "fav_user");
     await page.press("#react-select-2-input", "Enter");
     await page.fill("#react-select-3-input", "testingisfun99");
+    await page.press("#react-select-3-input", "Enter");
     await new Promise(resolve => setTimeout(resolve, 2000));
     await percySnapshot(page, 'Added Creds');
-    await page.press("#react-select-3-input", "Enter");
+
     await page.click("#login-btn");
     await new Promise(resolve => setTimeout(resolve, 2000))
     await percySnapshot(page, 'LoggedIn Page');
