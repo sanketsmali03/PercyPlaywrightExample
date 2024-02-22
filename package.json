@@ -5,22 +5,22 @@
   "main": "index.js",
   "dependencies": {
     "browserstack-local": "^1.4.8",
-    "playwright": "^1.37.1",
+    "playwright": "^1.40.1",
     "util": "^0.12.4",
     "@percy/cli": "1.28.0",
     "@percy/playwright": "^1.0.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.37.1",
-    "browserstack-node-sdk": "^1.31.20"
+    "browserstack-node-sdk": "^1.31.22"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "onPrem-endToEnd": "npx playwright test login.spec.js --headed --config=resources/conf/playwright.config.js --project chromium",
     "onPrem-parallel": "npx playwright test --headed --config=resources/conf/playwright.config.js --workers 2",
     "postinstall": "npm update browserstack-node-sdk",
-    "bstack-single": "percy exec -- npx browserstack-node-sdk playwright test e2e.spec.js --config=resources/conf/playwright.config.js --browserstack.config=./resources/browserstack-conf/browserstack-single.yml",
-    "bstack-single-local": "percy exec -- npx browserstack-node-sdk playwright test e2e.spec.js --config=resources/conf/playwright-bstack-local.config.js --browserstack.config=./resources/browserstack-conf/browserstack-single.yml",
+    "bstack-single": "npx browserstack-node-sdk playwright test e2e.spec.js --config=resources/conf/playwright.config.js --browserstack.config=./resources/browserstack-conf/browserstack-single.yml",
+    "bstack-single-local": "percy exec -- npx browserstack-node-sdk playwright test newtab.spec.js --config=resources/conf/playwright-bstack-local.config.js --browserstack.config=./resources/browserstack-conf/browserstack-single.yml",
     "bstack-parallel-tests": "npx browserstack-node-sdk playwright test --config=resources/conf/playwright.config.js --browserstack.config=./resources/browserstack-conf/browserstack-parallel.yml",
     "bstack-parallel-browsers": "npx browserstack-node-sdk playwright test e2e.spec.js --config=resources/conf/playwright.config.js --browserstack.config=./resources/browserstack-conf/browserstack-parallel-browsers.yml",
     "bstack-local": "npx browserstack-node-sdk playwright test login.spec.js --config=resources/conf/playwright-bstack-local.config.js --browserstack.config=./resources/browserstack-conf/browserstack-local.yml",

@@ -29,8 +29,8 @@ buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${
 platforms:
   - os: Windows
     osVersion: 11
-    browserName: chrome
-    browserVersion: latest
+    browserName: playwright-firefox
+    browserVersion: 119
 
 # =======================
 # Parallels per Platform
